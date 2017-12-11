@@ -1,15 +1,16 @@
 {
   "name": "milleniumfrog_bib",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A small Library I use at university",
+  "main": "Dist",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "src": "src"
   },
   "scripts": {
     "test": "g++ -g --std=c++14 -o Debug test/main.cpp src/milleniumfrog.cpp && ./Debug",
     "build": "g++ --std=c++14 -o Dist test/main.cpp src/milleniumfrog.cpp" 
   },
-  "author": "",
-  "license": "ISC"
+  "author": "René Schwarzinger",
+  "license": "MIT"
 }
