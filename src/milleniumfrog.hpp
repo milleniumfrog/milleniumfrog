@@ -10,6 +10,7 @@
 #define milleniumfrog_hpp
 #include <iostream>
 #include <string>
+#include <vector>
 
 
 namespace mfrog {
@@ -29,6 +30,7 @@ namespace mfrog {
 	private:
 		std::string value {""};
 	public:
+		String();
 		String(std::string str);
 		std::string toStdString();
 		int toInt();
@@ -36,6 +38,8 @@ namespace mfrog {
 		String operator+(String &other);
 		String operator+(std::string &other);
 		String operator+(const char* other);
+		void concat(String &firstString);
+		void concat(String &firsxtString, std::vector<String> &otherStrings);
 	};
 }
 #endif /* milleniumfrog_hpp */

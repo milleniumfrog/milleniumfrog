@@ -46,6 +46,11 @@ mfrog::String::String(std::string str): value{str} {
 		std::cout << "created String with value " << str << std::endl;
 	}
 };
+mfrog::String::String(): value{""} {
+	if (vars::logLevel > 0) {
+		std::cout << "created String with value " <<  "" << std::endl;
+	}
+};
 // default functions
 std::string mfrog::String::toStdString() {
 	return value;
@@ -71,3 +76,13 @@ mfrog::String mfrog::String::operator+(const char* other){
 	std::string k = std::string(other);
 	return mfrog::String (value + k);
 };
+void mfrog::String::concat(String &firstString) {
+	value += firstString.value;
+};
+void mfrog::String::concat(String &firstString, std::vector<String> &stringArray) {
+	value += firstString.value;
+	for (String strEntry : stringArray) {
+		value += strEntry.value;
+	}
+};
+
