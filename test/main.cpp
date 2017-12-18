@@ -57,8 +57,15 @@ int main (int argc, const char* argv[]) {
     var.concat(var2, p);
 	test(var.toStdString() == "Hello world with a SkyHello world with a Sky");
 	
-	
-	
+	console.log(2, "Enter a new String");
+    std::cin >> var;
+    console.log(3, "was your String " + var.toStdString() + " (y/n)");
+    std::cin >> var;
+    if (var.toStdString() == "n") {
+        console.log(3, "Failed");
+    } else {
+         console.log(3, "Success");
+    }
 	
     return 0;
 }

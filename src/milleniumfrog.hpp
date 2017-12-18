@@ -5,9 +5,7 @@
 //  Created by René on 07.12.17.
 //  Copyright © 2017 René Schwarzinger. All rights reserved.
 //
-
-#ifndef milleniumfrog_hpp
-#define milleniumfrog_hpp
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -32,14 +30,15 @@ namespace mfrog {
 	public:
 		String();
 		String(std::string str);
+		void setValue(std::string &k);
 		std::string toStdString();
 		int toInt();
 		long toLong();
 		String operator+(String &other);
 		String operator+(std::string &other);
 		String operator+(const char* other);
+		friend std::istream& operator>>(std::istream& is, mfrog::String &obj);
 		void concat(String &firstString);
 		void concat(String &firsxtString, std::vector<String> &otherStrings);
 	};
 }
-#endif /* milleniumfrog_hpp */

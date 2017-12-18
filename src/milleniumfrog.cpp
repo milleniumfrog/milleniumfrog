@@ -63,6 +63,13 @@ int mfrog::String::toInt () {
 long mfrog::String::toLong () {
 	return std::stol(value);
 };
+
+void mfrog::String::setValue(std::string &k) {
+	value = k;
+};
+
+
+// Operators
 		
 mfrog::String mfrog::String::operator+(mfrog::String &other){
 	mfrog::String res(value + other.toStdString());
@@ -76,13 +83,24 @@ mfrog::String mfrog::String::operator+(const char* other){
 	std::string k = std::string(other);
 	return mfrog::String (value + k);
 };
+
+std::istream& mfrog::operator>>(std::istream& is, mfrog::String &Str) {
+	std::string k;
+	is >> k;
+	Str.setValue(k);
+	if(false) // TODO
+        is.setstate(std::ios::failbit);
+    return is;
+};
+
+
 void mfrog::String::concat(String &firstString) {
 	value += firstString.value;
 };
+
 void mfrog::String::concat(String &firstString, std::vector<String> &stringArray) {
 	value += firstString.value;
 	for (String strEntry : stringArray) {
 		value += strEntry.value;
 	}
 };
-
