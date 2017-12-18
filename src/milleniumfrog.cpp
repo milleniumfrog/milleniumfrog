@@ -68,6 +68,10 @@ void mfrog::String::setValue(std::string &k) {
 	value = k;
 };
 
+const char* mfrog::String::toCString() {
+	return value.c_str();
+};
+
 
 // Operators
 		

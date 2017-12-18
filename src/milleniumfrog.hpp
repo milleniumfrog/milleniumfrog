@@ -32,6 +32,7 @@ namespace mfrog {
 		String(std::string str);
 		void setValue(std::string &k);
 		std::string toStdString();
+		const char * toCString();
 		int toInt();
 		long toLong();
 		String operator+(String &other);
