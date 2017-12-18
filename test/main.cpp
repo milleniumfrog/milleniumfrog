@@ -66,7 +66,10 @@ int main (int argc, const char* argv[]) {
     } else {
          console.log(3, "Success");
     }
-	
+
+    console.log(2, "Transform String to Double");
+    var.setValue("2.516");
+    test(var.toDouble() == 2.516);
     return 0;
 }
 

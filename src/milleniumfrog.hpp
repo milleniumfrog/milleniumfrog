@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
 
 
 namespace mfrog {
@@ -31,8 +32,10 @@ namespace mfrog {
 		String();
 		String(std::string str);
 		void setValue(std::string &k);
+		void setValue(const char* k);
 		std::string toStdString();
 		const char * toCString();
+		double toDouble();
 		int toInt();
 		long toLong();
 		String operator+(String &other);

@@ -68,10 +68,18 @@ void mfrog::String::setValue(std::string &k) {
 	value = k;
 };
 
+void mfrog::String::setValue(const char* k) {
+	std::string b {k};
+	this->setValue(b);
+};
+
 const char* mfrog::String::toCString() {
 	return value.c_str();
 };
 
+double mfrog::String::toDouble() {
+	return ::atof(this->toCString());
+};
 
 // Operators
 		
